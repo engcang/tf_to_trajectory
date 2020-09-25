@@ -59,9 +59,9 @@ if __name__ == '__main__':
                 pose.pose.orientation.y = path_pub_class.pose.rotation.y
                 pose.pose.orientation.z = path_pub_class.pose.rotation.z
                 pose.pose.orientation.w = path_pub_class.pose.rotation.w
-                pose.header.frame_id = "/map"
+                pose.header.frame_id = path_pub_class.parent_frame_id
                 pose.header.stamp = rospy.Time.now()
-                path_pub_class.my_path.header.frame_id="/map"
+                path_pub_class.my_path.header.frame_id=path_pub_class.parent_frame_id
                 path_pub_class.my_path.poses.append(pose)
                 path_pub_class.my_path.header.stamp = rospy.Time.now()
                 path_pub_class.my_path_pub.publish(path_pub_class.my_path)

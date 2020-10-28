@@ -3,4 +3,5 @@
   <node name="tf_to_path" pkg="tf_to_trajectory" type="tf_to_path.py"/>
   <param name="/parent_frame_id" value="/world"/>
   <param name="/child_frame_id" value="/imu"/>
+  <param name="/out_topic_name" value="/my_path"/>
 </launch>

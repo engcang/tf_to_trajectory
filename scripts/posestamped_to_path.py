@@ -31,10 +31,11 @@ class path_pub():
         self.frame_id = rospy.get_param("/frame_id", 'map')
         self.topic_name = rospy.get_param("/topic_name", '/mavros/vision_pose/pose')
         self.out_topic_name = rospy.get_param("/out_topic_name", '/my_path')
+        self.append_rate = rospy.get_param("/append_rate", 25)
         self.my_pose = rospy.Subscriber(self.topic_name, PoseStamped, self.posecallback)
         self.my_path_pub = rospy.Publisher(self.out_topic_name, Path, queue_size=1)
 
-        self.rate = rospy.Rate(25)
+        self.rate = rospy.Rate(self.append_rate)
         self.my_path = Path()
         self.my_path.header.frame_id = self.frame_id
         self.check = 0

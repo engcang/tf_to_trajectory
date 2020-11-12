@@ -32,11 +32,12 @@ class path_pub():
         self.parent_frame_id = rospy.get_param("/parent_frame_id", '/world')
         self.child_frame_id = rospy.get_param("/child_frame_id", '/imu')
         self.out_topic_name = rospy.get_param("/out_topic_name", '/my_path')
+        self.append_rate = rospy.get_param("/append_rate", 25)
         self.my_pose = rospy.Subscriber('/tf', TFMessage, self.tfcallback)
         self.my_path_pub = rospy.Publisher(self.out_topic_name, Path, queue_size=1)
 
 
-        self.rate = rospy.Rate(25)
+        self.rate = rospy.Rate(self.append_rate)
         self.my_path = Path()
         self.check = 0
 

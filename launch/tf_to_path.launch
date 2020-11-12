@@ -4,4 +4,5 @@
   <param name="/parent_frame_id" value="/world"/>
   <param name="/child_frame_id" value="/imu"/>
   <param name="/out_topic_name" value="/my_path"/>
+  <param name="/append_rate" value="25"/>
 </launch>

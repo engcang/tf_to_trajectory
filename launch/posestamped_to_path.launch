@@ -4,4 +4,5 @@
   <param name="/frame_id" value="map"/>
   <param name="/topic_name" value="/mavros/vision_pose/pose"/>
   <param name="/out_topic_name" value="/my_path"/>
+  <param name="/append_rate" value="25"/>
 </launch>

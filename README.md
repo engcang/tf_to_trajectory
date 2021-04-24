@@ -1,4 +1,7 @@
-# tf_to_trajectory: /tf message to Path to visualize in Rviz
+# Convert ROS messages to nav_msgs/Path to visualize in Rviz
++ `/tf` message to nav_msgs/Path
++ `geometry_msgs/PoseStamped` message to nav_msgs/Path
++ `gazebo_msgs/ModelStates` message to nav_msgs/Path
 
 <br><br>
 
@@ -6,5 +9,7 @@
 + simply run
 ~~~shell
   $ roslaunch tf_to_trajectory tf_to_path.launch
+  $ roslaunch tf_to_trajectory posestamped_to_path.launch
+  $ roslaunch tf_to_trajectory gazebo_gt_to_path.launch
 ~~~
-+ Edit ***parent frame id*** and ***child frame id*** in launch file
++ Edit `parent frame id`, `child frame id`, and `topic name` in launch files

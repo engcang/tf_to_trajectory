@@ -29,8 +29,8 @@ signal.signal(signal.SIGINT, signal_handler)
 class path_pub():
     def __init__(self):
         rospy.init_node('gt_path_pubb', anonymous=True)
-        self.parent_frame_id = rospy.get_param("/parent_frame_id", 'world')
-        self.append_rate = rospy.get_param("/append_rate", 25)
+        self.parent_frame_id = rospy.get_param("~parent_frame_id", 'world')
+        self.append_rate = rospy.get_param("~append_rate", 25)
         self.robot_name = rospy.get_namespace()
 
         self.gt_path_pub = rospy.Publisher("gt_path", Path, queue_size=2)

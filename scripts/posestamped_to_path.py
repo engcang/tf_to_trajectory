@@ -28,10 +28,10 @@ signal.signal(signal.SIGINT, signal_handler)
 class path_pub():
     def __init__(self):
         rospy.init_node('path_pubb', anonymous=True)
-        self.frame_id = rospy.get_param("/frame_id", 'map')
-        self.topic_name = rospy.get_param("/topic_name", '/mavros/vision_pose/pose')
-        self.out_topic_name = rospy.get_param("/out_topic_name", '/my_path')
-        self.append_rate = rospy.get_param("/append_rate", 25)
+        self.frame_id = rospy.get_param("~frame_id", 'map')
+        self.topic_name = rospy.get_param("~topic_name", '/mavros/vision_pose/pose')
+        self.out_topic_name = rospy.get_param("~out_topic_name", 'my_path')
+        self.append_rate = rospy.get_param("~append_rate", 25)
         self.my_pose = rospy.Subscriber(self.topic_name, PoseStamped, self.posecallback)
         self.my_path_pub = rospy.Publisher(self.out_topic_name, Path, queue_size=1)
 

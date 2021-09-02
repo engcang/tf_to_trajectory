@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <launch>
-  <node name="tf_to_path" pkg="tf_to_trajectory" type="tf_to_path.py"/>
-    <param name="parent_frame_id" value="world"/>
-    <param name="child_frame_id" value="imu"/>
+  <node name="tf_to_path" pkg="tf_to_trajectory" type="tf_to_path.py">
+    <param name="parent_frame_id" value="map"/>
+    <param name="child_frame_id" value="base_link"/>
     <param name="out_topic_name" value="/my_path"/>
-    <param name="append_rate" value="25"/>
+    <param name="append_rate" value="5"/>
   </node>
 </launch>

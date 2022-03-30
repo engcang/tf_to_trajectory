@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+  <node name="tf_to_path2" pkg="tf_to_trajectory" type="odom_to_path.py">
+    <param name="frame_id" value="odom"/>
+    <param name="topic_name" value="/robot5/jackal_velocity_controller/odom"/>
+    <param name="out_topic_name" value="/not_filtered"/>
+    <param name="append_rate" value="5"/>
+  </node>
+</launch>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+  <node name="tf_to_path" pkg="tf_to_trajectory" type="posestamped_to_path.py">
+    <param name="frame_id" value="world"/>
+    <param name="topic_name" value="/vrpn_client_node/CJH_UAV_1/pose"/>
+    <param name="out_topic_name" value="/path1"/>
+    <param name="append_rate" value="5"/>
+  </node>
+
+  <node name="tf_to_path2" pkg="tf_to_trajectory" type="posestamped_to_path.py">
+    <param name="frame_id" value="world"/>
+    <param name="topic_name" value="/vrpn_client_node/CJH_UAV_2/pose"/>
+    <param name="out_topic_name" value="/path2"/>
+    <param name="append_rate" value="5"/>
+  </node>
+
+  <node name="tf_to_path3" pkg="tf_to_trajectory" type="posestamped_to_path.py">
+    <param name="frame_id" value="world"/>
+    <param name="topic_name" value="/vrpn_client_node/CJH_UAV_3/pose"/>
+    <param name="out_topic_name" value="/path3"/>
+    <param name="append_rate" value="5"/>
+  </node>
+
+  <node name="tf_to_path4" pkg="tf_to_trajectory" type="posestamped_to_path.py">
+    <param name="frame_id" value="world"/>
+    <param name="topic_name" value="/vrpn_client_node/CJH_UAV_4/pose"/>
+    <param name="out_topic_name" value="/path4"/>
+    <param name="append_rate" value="5"/>
+  </node>
+
+  <node name="tf_to_path5" pkg="tf_to_trajectory" type="posestamped_to_path.py">
+    <param name="frame_id" value="world"/>
+    <param name="topic_name" value="/vrpn_client_node/CJH_UAV_5/pose"/>
+    <param name="out_topic_name" value="/path5"/>
+    <param name="append_rate" value="5"/>
+  </node>
+
+</launch>
